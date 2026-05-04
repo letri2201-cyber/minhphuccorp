@@ -193,6 +193,34 @@ h1,h2,h3{margin:0}
 .btn:active {
   transform: scale(0.97);
 }
+
+/* ===== FIX IMAGE RESPONSIVE ===== */
+.profile-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 16px;
+}
+
+/* chống tràn layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* fix mobile chắc chắn */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+/* tránh tràn ngang */
+body {
+  overflow-x: hidden;
+}
 </style>
   
 </head>
@@ -206,7 +234,9 @@ h1,h2,h3{margin:0}
 
    <!-- PROFILE IMAGE BELOW LOGOS -->
   <div>
-   <img src="MPC profile.jpg" class="profile-img">
+  <img src="MPC profile.jpg"
+     class="profile-img"
+     style="width:100%; max-width:100%; height:auto; display:block;">
   </div>
 </section>
 <!-- WHY -->
@@ -466,8 +496,8 @@ h1,h2,h3{margin:0}
 <div class="footer">© Minh Phúc Corporation</div>
 
   <div class="sticky-cta">
-  <a href="aTri LinkedIn.jpg" target="_blank">
-    About Trile
+  <a href="aTri contact.PNG" target="_blank">
+     Contact
   </a>
 </div>
 
