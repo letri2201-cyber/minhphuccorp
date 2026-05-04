@@ -9,26 +9,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+body{
   margin:0;
-  font-family:'Inter', sans-serif;
+  font-family:'Inter',sans-serif;
   background:#020617;
   color:#fff;
 }
 
-.section {
-  padding:100px 20px;
-  max-width:1100px;
+/* CONTAINER */
+.section{
+  max-width:1200px;
   margin:auto;
+  padding:80px 20px;
 }
 
-h2 {
+h2{
   text-align:center;
   margin-bottom:50px;
+  font-size:32px;
 }
 
 /* HERO */
-.hero {
+.hero{
   height:100vh;
   display:flex;
   flex-direction:column;
@@ -38,115 +40,118 @@ h2 {
   background: radial-gradient(circle,#1e3a8a,#020617);
 }
 
-.hero h1 {
-  font-size:52px;
+.hero h1{
+  font-size:56px;
+  margin:0;
 }
 
-.hero p {
+.hero p{
   color:#aaa;
 }
 
+/* TRUST LOGO */
+.logos{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+
+.logos img{
+  height:50px;
+  opacity:0.7;
+}
+
 /* GRID */
-.grid {
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
 
 /* CARD */
-.card {
-  background:rgba(255,255,255,0.03);
+.card{
+  background:rgba(255,255,255,0.04);
   padding:30px;
   border-radius:16px;
   transition:0.3s;
 }
 
-.card:hover {
-  transform:translateY(-5px);
+.card:hover{
+  transform:translateY(-6px);
 }
 
 /* CASE */
-.case {
+.case{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:20px;
   background:rgba(255,255,255,0.04);
-  padding:30px;
+  padding:25px;
   border-radius:16px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
-.metric {
+.case img{
+  width:60px;
+}
+
+.metric{
   color:#3b82f6;
   font-weight:600;
 }
 
+/* KPI */
+.kpi{
+  text-align:center;
+  font-size:26px;
+  font-weight:600;
+  color:#3b82f6;
+}
+
 /* CTA */
-.cta {
-  background:rgba(255,255,255,0.04);
+.cta{
+  background:linear-gradient(135deg,#1e3a8a,#020617);
   padding:50px;
   border-radius:20px;
+  text-align:center;
 }
 
-.cta h3 {
-  margin-bottom:10px;
-}
-
-.cta-actions {
+.cta-actions{
+  margin-top:25px;
   display:flex;
+  justify-content:center;
   gap:15px;
   flex-wrap:wrap;
-  margin-top:20px;
-  justify-content:center;
 }
 
-.btn {
+.btn{
   padding:12px 22px;
   border-radius:30px;
   text-decoration:none;
   transition:0.3s;
-  font-size:14px;
 }
 
-.btn.primary {
+.btn.primary{
   background:linear-gradient(90deg,#3b82f6,#06b6d4);
   color:white;
 }
 
-.btn.secondary {
+.btn.secondary{
   border:1px solid #3b82f6;
   color:#3b82f6;
 }
 
-.btn.ghost {
-  color:#aaa;
-}
-
-.btn:hover {
+.btn:hover{
   transform:scale(1.05);
 }
 
-/* URGENCY */
-.urgency {
-  margin-top:30px;
-  text-align:center;
-  color:#facc15;
-}
-
 /* FOOTER */
-.footer {
+.footer{
   text-align:center;
   padding:40px;
   color:#777;
-}
-
-/* FADE */
-.fade {
-  opacity:0;
-  transform:translateY(40px);
-  transition:0.6s;
-}
-
-.fade.show {
-  opacity:1;
-  transform:translateY(0);
 }
 </style>
 </head>
@@ -156,74 +161,82 @@ h2 {
 <!-- HERO -->
 <section class="hero">
   <h1>Architecting Digital Advantage</h1>
-  <p>AI-Powered Solutions • Strategic IT Consulting</p>
+  <p>AI • Data • Strategic IT Consulting</p>
+
+  <!-- LOGO TRUST -->
+  <div class="logos">
+    <img src="thehome.png">
+    <img src="viettin.png">
+    <img src="sago.png">
+  </div>
 </section>
 
 <!-- WHY -->
-<section class="section fade">
+<section class="section">
   <h2>Why Minh Phúc</h2>
-  <p style="text-align:center;">
-    10+ years • 100+ projects • Proven across SMB & Enterprise
-  </p>
+  <div class="grid">
+    <div class="card">10+ Years Experience</div>
+    <div class="card">100+ Projects Delivered</div>
+    <div class="card">SMB to Enterprise</div>
+  </div>
 </section>
 
-<!-- CASE STUDIES -->
-<section class="section fade">
+<!-- CASE -->
+<section class="section">
   <h2>Selected Engagements</h2>
 
   <div class="case">
-    <h3>The Home Coffee</h3>
-    <p>POS & retail system transformation</p>
-    <p class="metric">+35% service speed • -20% inventory loss • +25% customer experience</p>
+    <img src="thehome.png">
+    <div>
+      <h3>The Home Coffee</h3>
+      <p>POS & retail transformation</p>
+      <p class="metric">+35% speed • -20% loss • +25% CX</p>
+    </div>
   </div>
 
   <div class="case">
-    <h3>Viettin Valuation</h3>
-    <p>Data platform & valuation automation</p>
-    <p class="metric">-50% processing time • +40% accuracy • nationwide scalability</p>
+    <img src="viettin.png">
+    <div>
+      <h3>Viettin Valuation</h3>
+      <p>Data platform & automation</p>
+      <p class="metric">-50% time • +40% accuracy</p>
+    </div>
   </div>
 
   <div class="case">
-    <h3>SaGo Coffee</h3>
-    <p>F&B operations optimization</p>
-    <p class="metric">-18% cost • +30% visibility • +20% profit margin</p>
+    <img src="sago.png">
+    <div>
+      <h3>SaGo Coffee</h3>
+      <p>F&B optimization</p>
+      <p class="metric">-18% cost • +20% margin</p>
+    </div>
   </div>
 
 </section>
 
 <!-- KPI -->
-<section class="section fade">
+<section class="section">
   <h2>Business Impact</h2>
   <div class="grid">
-    <div class="card">+35% Efficiency</div>
-    <div class="card">-50% Processing Time</div>
-    <div class="card">+40% Accuracy</div>
-    <div class="card">+20% Profit Margin</div>
+    <div class="card"><div class="kpi">+35%</div>Efficiency</div>
+    <div class="card"><div class="kpi">-50%</div>Processing Time</div>
+    <div class="card"><div class="kpi">+40%</div>Accuracy</div>
+    <div class="card"><div class="kpi">+20%</div>Profit</div>
   </div>
 </section>
 
-<!-- CTA v5 -->
-<section class="section fade">
+<!-- CTA -->
+<section class="section">
   <div class="cta">
-
     <h2>Let’s Build Your Digital Advantage</h2>
-
-    <h3>TRÍ LÊ MINH</h3>
-    <p style="color:#aaa;">Digital Transformation & AI Advisor</p>
-
-    <p>📧 trilm@minhphuccorp.com</p>
-    <p>📱 (+84) 933 333 849</p>
+    <p>TRÍ LÊ MINH • Digital Transformation & AI Advisor</p>
+    <p>📧 trilm@minhphuccorp.com • 📱 (+84) 933 333 849</p>
 
     <div class="cta-actions">
-      <a href="https://calendly.com/your-link" target="_blank" class="btn primary">Book Meeting</a>
-      <a href="aTri LinkedIn.jpg" target="_blank" class="btn secondary">LinkedIn</a>
-      <a href="MPC profile.jpg" class="btn ghost">Download Profile</a>
+      <a href="https://calendly.com/your-link" class="btn primary">Book Meeting</a>
+      <a href="aTri LinkedIn.jpg" class="btn secondary">LinkedIn</a>
+      <a href="MPC profile.jpg" class="btn secondary">Profile</a>
     </div>
-
-    <div class="urgency">
-      Limited availability this month • Confidential discussion
-    </div>
-
   </div>
 </section>
 
@@ -231,20 +244,6 @@ h2 {
 <div class="footer">
   © Minh Phúc Corporation
 </div>
-
-<script>
-const elements = document.querySelectorAll('.fade');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
-
-elements.forEach(el => observer.observe(el));
-</script>
 
 </body>
 </html>
