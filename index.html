@@ -71,7 +71,98 @@ h1,h2,h3{margin:0}
   .case-grid{grid-template-columns:1fr}
 }
 .footer{text-align:center;padding:36px;color:#71717a}
+
+  /* ===== MOBILE FULL OPTIMIZATION ===== */
+@media (max-width: 768px) {
+
+  /* HERO */
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    padding: 0 10px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  /* TRUST LOGO */
+  .trust {
+    gap: 20px;
+  }
+
+  .trust img {
+    height: 35px;
+  }
+
+  /* PROFILE IMAGE */
+  .profile-img {
+    margin: 20px auto;
+    border-radius: 12px;
+  }
+
+  /* SECTION */
+  .container {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  /* GRID → 1 COLUMN */
+  .grid,
+  .kpi {
+    grid-template-columns: 1fr;
+  }
+
+  /* CASE */
+  .case-head {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CARD */
+  .card {
+    padding: 20px;
+  }
+
+  /* KPI */
+  .kpi .num {
+    font-size: 24px;
+  }
+
+  /* CTA */
+  .cta {
+    padding: 30px 20px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
+
+  /* HOME BUTTON */
+  .home-btn {
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+  
 </style>
+  
 </head>
 
 <body>
