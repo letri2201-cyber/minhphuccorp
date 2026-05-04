@@ -14,22 +14,6 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:#fff;line-height:1.6}
-
-/* STICKY HOME BUTTON */
-.home-btn{
-  position:fixed; top:20px; left:20px;
-  background:rgba(0,0,0,0.6);
-  padding:10px 16px;
-  border-radius:30px;
-  font-size:14px;
-  text-decoration:none;
-  color:#fff;
-  z-index:999;
-  border:1px solid #334155;
-}
-.home-btn:hover{background:#111}
-
-/* LAYOUT */
 .container{max-width:1200px;margin:auto;padding:90px 20px}
 h1,h2,h3{margin:0}
 .section-title{font-size:34px;text-align:center;margin-bottom:50px}
@@ -41,19 +25,8 @@ h1,h2,h3{margin:0}
 }
 .hero h1{font-size:56px;max-width:820px}
 .hero p{margin-top:16px;color:var(--muted);font-size:18px}
-
 .trust{margin-top:36px;display:flex;gap:40px;flex-wrap:wrap;justify-content:center;opacity:.75}
 .trust img{height:46px}
-
-/* PROFILE IMAGE */
-.profile-img{
-  display:block;
-  margin:30px auto 0;
-  max-width:600px;
-  width:100%;
-  border-radius:16px;
-  opacity:0.9;
-}
 
 /* GRID */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
@@ -64,9 +37,12 @@ h1,h2,h3{margin:0}
 .case-wrap{margin-bottom:56px}
 .case-head{display:grid;grid-template-columns:80px 1fr;gap:20px;margin-bottom:16px}
 .case-head img{width:70px}
+.case-head h3{margin-bottom:6px}
 .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(59,130,246,.15);color:#93c5fd;font-size:12px;margin-right:8px}
 .case-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
 .box{background:var(--card);border-radius:16px;padding:22px}
+.box h4{margin-bottom:8px}
+.muted{color:var(--muted)}
 .metric{color:var(--accent);font-weight:600}
 
 /* KPI */
@@ -82,72 +58,254 @@ h1,h2,h3{margin:0}
 .btn.secondary{border:1px solid var(--accent);color:#93c5fd}
 .btn:hover{transform:scale(1.05)}
 
+/* SVG DIAGRAM */
+.diagram{width:100%;height:auto}
+.node{fill:#0b1224;stroke:#334155;stroke-width:1.2;rx:10}
+.node-title{fill:#e5e7eb;font-size:12px;font-weight:600}
+.node-sub{fill:#9ca3af;font-size:11px}
+.link{stroke:#475569;stroke-width:1.4;marker-end:url(#arrow)}
+.legend{font-size:12px;fill:#9ca3af}
+
+/* Responsive */
+@media(max-width:900px){
+  .case-grid{grid-template-columns:1fr}
+}
 .footer{text-align:center;padding:36px;color:#71717a}
 </style>
 </head>
 
 <body>
 
-<!-- HOME BUTTON -->
-<a href="#" class="home-btn">🏠 Home</a>
-
 <!-- HERO -->
 <section class="hero">
   <h1>Transform Technology into Competitive Advantage</h1>
-  <p>AI • Data • Strategic IT Consulting</p>
+  <p>AI • Data • Strategic IT Consulting — delivering measurable business outcomes.</p>
 
   <div class="trust">
-    <img src="thehome.png">
-    <img src="viettin.png">
-    <img src="sago.png">
+    <!-- Thay bằng logo thật nếu có -->
+    <img src="thehome.png" alt="The Home Coffee">
+    <img src="viettin.png" alt="Viettin Valuation">
+    <img src="sago.png" alt="SaGo Food & Coffee">
   </div>
-
+</section>
   <!-- PROFILE IMAGE BELOW LOGOS -->
   <img src="MPC profile.jpg" class="profile-img">
-</section>
-
 <!-- WHY -->
 <section class="container">
-  <!-- PROFILE IMAGE ABOVE WHY -->
-  <img src="MPC profile.jpg" class="profile-img">
-
   <h2 class="section-title">Why Minh Phúc</h2>
   <div class="grid">
-    <div class="card">10+ years transformation experience</div>
-    <div class="card">100+ projects delivered</div>
-    <div class="card">Proven measurable impact</div>
+    <div class="card">10+ years delivering enterprise IT transformation</div>
+    <div class="card">100+ projects across retail, finance, F&B</div>
+    <div class="card">Proven impact with measurable business results</div>
   </div>
 </section>
 
-<!-- CASE (rút gọn để gọn gàng) -->
-<section class="container">
-  <h2 class="section-title">Selected Engagements</h2>
-
-  <div class="card">
-    <h3>The Home Coffee</h3>
-    <p class="metric">+35% speed • -20% loss • +25% CX</p>
+<!-- ===================== CASE 1 ===================== -->
+<section class="container case-wrap">
+  <div class="case-head">
+    <img src="thehome.png" alt="">
+    <div>
+      <h3>The Home Coffee</h3>
+      <div>
+        <span class="badge">Retail / F&B</span>
+        <span class="badge">POS Transformation</span>
+      </div>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Viettin Valuation</h3>
-    <p class="metric">-50% time • +40% accuracy</p>
-  </div>
+  <div class="case-grid">
+    <!-- STORY -->
+    <div class="box">
+      <h4>Context & Problem</h4>
+      <p class="muted">
+        Hệ thống POS phân mảnh theo cửa hàng, tồn kho lệch, báo cáo trễ → khó mở rộng chuỗi.
+      </p>
 
-  <div class="card">
-    <h3>SaGo Coffee</h3>
-    <p class="metric">-18% cost • +20% margin</p>
-  </div>
+      <h4>Approach (AI Master Planning)</h4>
+      <p class="muted">
+        Chuẩn hoá data model → triển khai POS tập trung → realtime sync → dashboard vận hành.
+      </p>
 
+      <h4>Impact</h4>
+      <p class="metric">+35% tốc độ phục vụ • -20% thất thoát • +25% customer experience</p>
+    </div>
+
+    <!-- DIAGRAM -->
+    <div class="box">
+      <svg class="diagram" viewBox="0 0 520 260">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+          </marker>
+        </defs>
+
+        <!-- nodes -->
+        <rect x="10" y="90" width="120" height="60" class="node"/>
+        <text x="20" y="112" class="node-title">Store POS</text>
+        <text x="20" y="128" class="node-sub">Orders / Sales</text>
+
+        <rect x="200" y="30" width="120" height="60" class="node"/>
+        <text x="210" y="52" class="node-title">Central POS</text>
+        <text x="210" y="68" class="node-sub">Real-time Sync</text>
+
+        <rect x="200" y="150" width="120" height="60" class="node"/>
+        <text x="210" y="172" class="node-title">Inventory</text>
+        <text x="210" y="188" class="node-sub">Stock Control</text>
+
+        <rect x="380" y="90" width="120" height="60" class="node"/>
+        <text x="390" y="112" class="node-title">Dashboard</text>
+        <text x="390" y="128" class="node-sub">KPI / Ops</text>
+
+        <!-- links -->
+        <line x1="130" y1="120" x2="200" y2="60" class="link"/>
+        <line x1="130" y1="120" x2="200" y2="180" class="link"/>
+        <line x1="320" y1="60" x2="380" y2="120" class="link"/>
+        <line x1="320" y1="180" x2="380" y2="120" class="link"/>
+
+        <text x="10" y="240" class="legend">AI Master Planning: chuẩn hoá dữ liệu → đồng bộ realtime → quan sát vận hành</text>
+      </svg>
+    </div>
+  </div>
 </section>
 
-<!-- KPI -->
+<!-- ===================== CASE 2 ===================== -->
+<section class="container case-wrap">
+  <div class="case-head">
+    <img src="viettin.png" alt="">
+    <div>
+      <h3>Viettin Valuation</h3>
+      <div>
+        <span class="badge">Finance</span>
+        <span class="badge">Data Platform</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-grid">
+    <div class="box">
+      <h4>Context & Problem</h4>
+      <p class="muted">
+        Quy trình định giá thủ công, dữ liệu phân tán → thời gian xử lý dài, khó mở rộng toàn quốc.
+      </p>
+
+      <h4>Approach (Data + Automation)</h4>
+      <p class="muted">
+        Xây dựng data platform (ingest → warehouse) + workflow automation → chuẩn hoá pipeline định giá.
+      </p>
+
+      <h4>Impact</h4>
+      <p class="metric">-50% processing time • +40% accuracy • scale nationwide</p>
+    </div>
+
+    <div class="box">
+      <svg class="diagram" viewBox="0 0 520 260">
+        <defs>
+          <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+          </marker>
+        </defs>
+
+        <!-- nodes -->
+        <rect x="10" y="100" width="120" height="60" class="node"/>
+        <text x="20" y="122" class="node-title">Data Sources</text>
+        <text x="20" y="138" class="node-sub">Docs / Market</text>
+
+        <rect x="170" y="100" width="120" height="60" class="node"/>
+        <text x="180" y="122" class="node-title">Ingestion</text>
+        <text x="180" y="138" class="node-sub">ETL / Clean</text>
+
+        <rect x="330" y="100" width="120" height="60" class="node"/>
+        <text x="340" y="122" class="node-title">Data Platform</text>
+        <text x="340" y="138" class="node-sub">Warehouse</text>
+
+        <rect x="330" y="30" width="120" height="60" class="node"/>
+        <text x="340" y="52" class="node-title">Automation</text>
+        <text x="340" y="68" class="node-sub">Workflow</text>
+
+        <rect x="330" y="170" width="120" height="60" class="node"/>
+        <text x="340" y="192" class="node-title">Reports</text>
+        <text x="340" y="208" class="node-sub">Valuation</text>
+
+        <!-- links -->
+        <line x1="130" y1="130" x2="170" y2="130" class="link" marker-end="url(#arrow2)"/>
+        <line x1="290" y1="130" x2="330" y2="130" class="link" marker-end="url(#arrow2)"/>
+        <line x1="390" y1="100" x2="390" y2="90" class="link" marker-end="url(#arrow2)"/>
+        <line x1="390" y1="160" x2="390" y2="170" class="link" marker-end="url(#arrow2)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CASE 3 ===================== -->
+<section class="container case-wrap">
+  <div class="case-head">
+    <img src="sago.png" alt="">
+    <div>
+      <h3>SaGo Coffee</h3>
+      <div>
+        <span class="badge">F&B</span>
+        <span class="badge">Ops Optimization</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-grid">
+    <div class="box">
+      <h4>Context & Problem</h4>
+      <p class="muted">
+        Chi phí vận hành cao, thiếu visibility theo ca/ngày → quyết định chậm.
+      </p>
+
+      <h4>Approach (ERP-lite + Dashboard)</h4>
+      <p class="muted">
+        Tích hợp POS + chi phí + tồn kho → dashboard realtime cho chủ cửa hàng/chuỗi.
+      </p>
+
+      <h4>Impact</h4>
+      <p class="metric">-18% cost • +30% visibility • +20% profit margin</p>
+    </div>
+
+    <div class="box">
+      <svg class="diagram" viewBox="0 0 520 260">
+        <defs>
+          <marker id="arrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#475569"/>
+          </marker>
+        </defs>
+
+        <rect x="10" y="100" width="120" height="60" class="node"/>
+        <text x="20" y="122" class="node-title">POS</text>
+        <text x="20" y="138" class="node-sub">Sales</text>
+
+        <rect x="170" y="30" width="120" height="60" class="node"/>
+        <text x="180" y="52" class="node-title">Inventory</text>
+        <text x="180" y="68" class="node-sub">Stock</text>
+
+        <rect x="170" y="170" width="120" height="60" class="node"/>
+        <text x="180" y="192" class="node-title">Cost</text>
+        <text x="180" y="208" class="node-sub">Expenses</text>
+
+        <rect x="330" y="100" width="120" height="60" class="node"/>
+        <text x="340" y="122" class="node-title">Dashboard</text>
+        <text x="340" y="138" class="node-sub">Realtime KPI</text>
+
+        <line x1="130" y1="130" x2="170" y2="60" class="link" marker-end="url(#arrow3)"/>
+        <line x1="130" y1="130" x2="170" y2="200" class="link" marker-end="url(#arrow3)"/>
+        <line x1="290" y1="60" x2="330" y2="130" class="link" marker-end="url(#arrow3)"/>
+        <line x1="290" y1="200" x2="330" y2="130" class="link" marker-end="url(#arrow3)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- KPI SUMMARY -->
 <section class="container">
   <h2 class="section-title">Business Impact</h2>
   <div class="kpi">
-    <div class="card"><div class="num">+35%</div>Efficiency</div>
-    <div class="card"><div class="num">-50%</div>Time</div>
+    <div class="card"><div class="num">+35%</div>Operational Efficiency</div>
+    <div class="card"><div class="num">-50%</div>Processing Time</div>
     <div class="card"><div class="num">+40%</div>Accuracy</div>
-    <div class="card"><div class="num">+20%</div>Profit</div>
+    <div class="card"><div class="num">+20%</div>Profit Growth</div>
   </div>
 </section>
 
@@ -159,6 +317,7 @@ h1,h2,h3{margin:0}
     <p>📧 trilm@minhphuccorp.com • 📱 (+84) 933 333 849</p>
 
     <div class="cta-actions">
+      <a href="#" class="btn secondary">🏠 Home</a>
       <a href="https://calendly.com/your-link" class="btn primary">Book Meeting</a>
       <a href="aTri LinkedIn.jpg" class="btn secondary">LinkedIn</a>
       <a href="MPC profile.jpg" class="btn secondary">Profile</a>
