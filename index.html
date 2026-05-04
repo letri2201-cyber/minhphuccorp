@@ -14,19 +14,18 @@ body{
   font-family:'Inter',sans-serif;
   background:#020617;
   color:#fff;
+  line-height:1.6;
 }
 
-/* CONTAINER */
-.section{
+/* LAYOUT */
+.container{
   max-width:1200px;
   margin:auto;
-  padding:80px 20px;
+  padding:100px 20px;
 }
 
-h2{
-  text-align:center;
-  margin-bottom:50px;
-  font-size:32px;
+h1,h2,h3{
+  margin:0;
 }
 
 /* HERO */
@@ -37,36 +36,45 @@ h2{
   justify-content:center;
   align-items:center;
   text-align:center;
-  background: radial-gradient(circle,#1e3a8a,#020617);
+  background: radial-gradient(circle at top,#1e3a8a,#020617);
 }
 
 .hero h1{
-  font-size:56px;
-  margin:0;
+  font-size:60px;
+  max-width:800px;
 }
 
 .hero p{
+  margin-top:20px;
   color:#aaa;
+  font-size:18px;
 }
 
-/* TRUST LOGO */
-.logos{
+/* TRUST BAR */
+.trust{
+  margin-top:50px;
   display:flex;
+  gap:50px;
   justify-content:center;
-  gap:40px;
-  margin-top:40px;
   flex-wrap:wrap;
+  opacity:0.7;
 }
 
-.logos img{
+.trust img{
   height:50px;
-  opacity:0.7;
+}
+
+/* SECTION TITLE */
+.section-title{
+  text-align:center;
+  font-size:34px;
+  margin-bottom:60px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:30px;
 }
 
@@ -86,15 +94,20 @@ h2{
 .case{
   display:grid;
   grid-template-columns:80px 1fr;
-  gap:20px;
-  background:rgba(255,255,255,0.04);
-  padding:25px;
-  border-radius:16px;
-  margin-bottom:20px;
+  gap:25px;
+  margin-bottom:40px;
 }
 
 .case img{
-  width:60px;
+  width:70px;
+}
+
+.case h3{
+  margin-bottom:5px;
+}
+
+.case p{
+  margin:5px 0;
 }
 
 .metric{
@@ -102,10 +115,10 @@ h2{
   font-weight:600;
 }
 
-/* KPI */
-.kpi{
+/* IMPACT */
+.impact{
   text-align:center;
-  font-size:26px;
+  font-size:30px;
   font-weight:600;
   color:#3b82f6;
 }
@@ -113,13 +126,17 @@ h2{
 /* CTA */
 .cta{
   background:linear-gradient(135deg,#1e3a8a,#020617);
-  padding:50px;
+  padding:60px;
   border-radius:20px;
   text-align:center;
 }
 
+.cta h2{
+  margin-bottom:10px;
+}
+
 .cta-actions{
-  margin-top:25px;
+  margin-top:30px;
   display:flex;
   justify-content:center;
   gap:15px;
@@ -127,7 +144,7 @@ h2{
 }
 
 .btn{
-  padding:12px 22px;
+  padding:12px 24px;
   border-radius:30px;
   text-decoration:none;
   transition:0.3s;
@@ -135,7 +152,7 @@ h2{
 
 .btn.primary{
   background:linear-gradient(90deg,#3b82f6,#06b6d4);
-  color:white;
+  color:#fff;
 }
 
 .btn.secondary{
@@ -160,11 +177,10 @@ h2{
 
 <!-- HERO -->
 <section class="hero">
-  <h1>Architecting Digital Advantage</h1>
-  <p>AI • Data • Strategic IT Consulting</p>
+  <h1>Transform Technology into Competitive Advantage</h1>
+  <p>We help enterprises leverage AI, Data and IT strategy to drive measurable business growth.</p>
 
-  <!-- LOGO TRUST -->
-  <div class="logos">
+  <div class="trust">
     <img src="thehome.png">
     <img src="viettin.png">
     <img src="sago.png">
@@ -172,25 +188,27 @@ h2{
 </section>
 
 <!-- WHY -->
-<section class="section">
-  <h2>Why Minh Phúc</h2>
+<section class="container">
+  <h2 class="section-title">Why Minh Phúc</h2>
+
   <div class="grid">
-    <div class="card">10+ Years Experience</div>
-    <div class="card">100+ Projects Delivered</div>
-    <div class="card">SMB to Enterprise</div>
+    <div class="card">10+ years delivering enterprise IT transformation</div>
+    <div class="card">100+ projects across retail, finance, F&B</div>
+    <div class="card">Proven impact with measurable business results</div>
   </div>
 </section>
 
-<!-- CASE -->
-<section class="section">
-  <h2>Selected Engagements</h2>
+<!-- CASE STUDY -->
+<section class="container">
+  <h2 class="section-title">Selected Engagements</h2>
 
   <div class="case">
     <img src="thehome.png">
     <div>
       <h3>The Home Coffee</h3>
-      <p>POS & retail transformation</p>
-      <p class="metric">+35% speed • -20% loss • +25% CX</p>
+      <p><strong>Problem:</strong> Fragmented POS & inventory</p>
+      <p><strong>Solution:</strong> Centralized retail system</p>
+      <p class="metric">+35% speed • -20% loss • +25% customer experience</p>
     </div>
   </div>
 
@@ -198,8 +216,9 @@ h2{
     <img src="viettin.png">
     <div>
       <h3>Viettin Valuation</h3>
-      <p>Data platform & automation</p>
-      <p class="metric">-50% time • +40% accuracy</p>
+      <p><strong>Problem:</strong> Manual valuation workflow</p>
+      <p><strong>Solution:</strong> Data platform & automation</p>
+      <p class="metric">-50% processing time • +40% accuracy</p>
     </div>
   </div>
 
@@ -207,35 +226,35 @@ h2{
     <img src="sago.png">
     <div>
       <h3>SaGo Coffee</h3>
-      <p>F&B optimization</p>
-      <p class="metric">-18% cost • +20% margin</p>
+      <p><strong>Problem:</strong> High operational cost</p>
+      <p><strong>Solution:</strong> F&B system optimization</p>
+      <p class="metric">-18% cost • +20% profit margin</p>
     </div>
   </div>
-
 </section>
 
-<!-- KPI -->
-<section class="section">
-  <h2>Business Impact</h2>
+<!-- IMPACT -->
+<section class="container">
+  <h2 class="section-title">Business Impact</h2>
+
   <div class="grid">
-    <div class="card"><div class="kpi">+35%</div>Efficiency</div>
-    <div class="card"><div class="kpi">-50%</div>Processing Time</div>
-    <div class="card"><div class="kpi">+40%</div>Accuracy</div>
-    <div class="card"><div class="kpi">+20%</div>Profit</div>
+    <div class="card"><div class="impact">+35%</div>Operational Efficiency</div>
+    <div class="card"><div class="impact">-50%</div>Processing Time</div>
+    <div class="card"><div class="impact">+40%</div>Accuracy</div>
+    <div class="card"><div class="impact">+20%</div>Profit Growth</div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section">
+<section class="container">
   <div class="cta">
-    <h2>Let’s Build Your Digital Advantage</h2>
+    <h2>Partner with Minh Phúc Corporation</h2>
     <p>TRÍ LÊ MINH • Digital Transformation & AI Advisor</p>
     <p>📧 trilm@minhphuccorp.com • 📱 (+84) 933 333 849</p>
 
     <div class="cta-actions">
       <a href="https://calendly.com/your-link" class="btn primary">Book Meeting</a>
-      <a href="aTri LinkedIn.jpg" class="btn secondary">LinkedIn</a>
-      <a href="MPC profile.jpg" class="btn secondary">Profile</a>
+      <a href="https://linkedin.com/in/your-profile" class="btn secondary">LinkedIn</a>
     </div>
   </div>
 </section>
